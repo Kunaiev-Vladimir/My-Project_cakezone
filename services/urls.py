@@ -1,0 +1,9 @@
+from django.urls import path
+from .views import index
+
+name = 'services'
+
+urlpatterns = [
+    path('', index, name = 'index'),
+   
+]
