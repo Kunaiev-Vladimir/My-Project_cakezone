@@ -19,4 +19,3 @@ class Dish(models.Model):
     is_special = models.BooleanField(default=False)
     sort = models.PositiveSmallIntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
- 
