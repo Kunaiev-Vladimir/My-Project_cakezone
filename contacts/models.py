@@ -17,4 +17,12 @@ class Contacts(models.Model):
     twitter = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
     
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        
+        verbose_name = 'Контакт' #'Contact'
+        verbose_name_plural = 'Контакты' #'Contacts'
+        ordering = ('sort',)
     

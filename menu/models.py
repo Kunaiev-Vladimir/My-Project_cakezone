@@ -9,6 +9,15 @@ class Category(models.Model):
     sort = models.PositiveSmallIntegerField()
     is_vsible = models.BooleanField(default=True)
     
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        
+        verbose_name = 'Категория' #'Category'
+        verbose_name_plural = 'Категории' #'Categories'
+        ordering = ('sort',)
+
 class Dish(models.Model):
     
     name = models.CharField(max_length=50)
@@ -19,3 +28,12 @@ class Dish(models.Model):
     is_special = models.BooleanField(default=False)
     sort = models.PositiveSmallIntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        
+        verbose_name = 'Блюдо' #'Dish'
+        verbose_name_plural = 'Блюда' #'Dishes'
+        ordering = ('sort',)
