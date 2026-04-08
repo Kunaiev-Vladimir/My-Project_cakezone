@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+#1from django.http import HttpResponse
 
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Services Index Page")
+    #1return HttpResponse("Services Index Page")
+    return render(request, 'services.html')

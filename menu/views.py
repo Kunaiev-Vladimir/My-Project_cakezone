@@ -5,5 +5,7 @@ from .models import Category
 
 def index(request):
     #categories = Category.objects.all()
-    return None
+    #!categories = Category.objects.all().order_by('sort')
+    #return None
     #return f'{categories}'
+    return render(request, 'menu.html')
