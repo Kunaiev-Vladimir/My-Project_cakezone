@@ -1,6 +1,8 @@
 
 {% extends "index.html" %}
 
+{% load static %}
+
 {% block content %}
 
     <!-- Hero Start -->
@@ -50,7 +52,7 @@
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
                         <!-- Добавить статик !!!!!!-->
-                        <img class="position-absolute w-100 h-100" src="img/about.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="{% static "img/about.jpg" %}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pb-5">
@@ -161,7 +163,7 @@
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
                         <!-- Добавить статик !!!!!!-->
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;">
+                        <img class="img-fluid flex-shrink-0" src="{% static "img/testimonial-1.jpg" %}" style="width: 60px; height: 60px;">
                         <div class="ps-3">
                             <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
                             <span>Profession</span>
@@ -173,7 +175,7 @@
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
                         <!-- Добавить статик !!!!!!-->
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;">
+                        <img class="img-fluid flex-shrink-0" src="{% static "img/testimonial-2.jpg" %}" style="width: 60px; height: 60px;">
                         <div class="ps-3">
                             <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
                             <span>Profession</span>
@@ -185,7 +187,7 @@
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
                         <!-- Добавить статик !!!!!!-->
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;">
+                        <img class="img-fluid flex-shrink-0" src="{% static "img/testimonial-3.jpg" %}" style="width: 60px; height: 60px;">
                         <div class="ps-3">
                             <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
                             <span>Profession</span>
@@ -197,7 +199,7 @@
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
                         <!-- Добавить статик !!!!!!-->
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;">
+                        <img class="img-fluid flex-shrink-0" src="{% static "img/testimonial-4.jpg" %}" style="width: 60px; height: 60px;">
                         <div class="ps-3">
                             <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
                             <span>Profession</span>
