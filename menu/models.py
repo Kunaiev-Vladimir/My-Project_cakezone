@@ -9,6 +9,9 @@ class Category(models.Model):
     sort = models.PositiveSmallIntegerField()
     is_vsible = models.BooleanField(default=True)
     
+    def __iter__(self):
+        return iter(self.dishes.filter(is_visible=True)) #is_visible=True - отображать только видимые блюда в категории
+    
     def __str__(self):
         return self.name
     
@@ -27,7 +30,7 @@ class Dish(models.Model):
     is_visible = models.BooleanField(default=True)
     is_special = models.BooleanField(default=False)
     sort = models.PositiveSmallIntegerField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='dishes')
     
     def __str__(self):
         return self.name

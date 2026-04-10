@@ -8,4 +8,8 @@ def index(request):
     #!categories = Category.objects.all().order_by('sort')
     #return None
     #return f'{categories}'
-    return render(request, 'menu.html')
+    categories = Category.objects.filter(is_vsible = True)
+    context = {
+        'categories': categories
+    }
+    return render(request, 'menu.html', context = context)
