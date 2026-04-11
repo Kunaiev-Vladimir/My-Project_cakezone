@@ -15,11 +15,12 @@ class Staff(models.Model):
     twitter = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
     
-    def __str__(self):
-        return self.name
-    
+        
     class Meta:
         
         verbose_name = 'Сотрудник' #'Staff'
         verbose_name_plural = 'Сотрудники' #'Staff members'
         ordering = ('sort',)
+        
+    def __str__(self):
+        return self.name
