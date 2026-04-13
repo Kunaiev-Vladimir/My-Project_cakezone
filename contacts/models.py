@@ -4,7 +4,7 @@ from django.db import models
 
 class Contacts(models.Model):
     
-    address = models.CharField(max_length=255)
+    address = models.TextField() #address = models.CharField(max_length=255) мой вариант был
     photo = models.ImageField(upload_to='contacts_photos')
     phone = models.CharField(max_length=20)
     email = models.EmailField()
@@ -18,7 +18,7 @@ class Contacts(models.Model):
     linkedin = models.URLField(blank=True)
     
     def __str__(self):
-        return self.name
+        return self.address
     
     class Meta:
         
