@@ -8,8 +8,33 @@ class MessageFromCustomerForm(forms.ModelForm):
     
     class Meta:
         model = MessageFromCustomer
-        #fields = ['name', 'email', 'subject', 'message']
+        #fields = ['name', 'email', 'subject', 'message'] можно и через список
         fields = ('name', 'email', 'subject', 'message')
+        
+        #class="form-control bg-light border-0 px-4" placeholder="Your Name" style="height: 55px --> c html атрибуты для каждого поля формы
+        
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'class': 'form-control bg-light border-0 px-4',
+                'placeholder': 'Your Name',
+                'style': 'height: 55px;',
+                }),
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control bg-light border-0 px-4',
+                'placeholder': 'Your Email',
+                'style': 'height: 55px;',
+                }),
+            'subject': forms.TextInput(attrs={
+                'class': 'form-control bg-light border-0 px-4',
+                'placeholder': 'Subject',
+                'style': 'height: 55px;',
+                }),
+            'message': forms.Textarea(attrs={
+                'class': 'form-control bg-light border-0 px-4 py-3',
+                'rows': 4,
+                'placeholder': 'Message',
+                }),
+        }
 
 
 class SubscriberForm(forms.ModelForm):
@@ -18,3 +43,10 @@ class SubscriberForm(forms.ModelForm):
         model = Subscriber
         #fields = ['email']
         fields = ('email',)
+        
+        widgets = {
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control border-white p-3',
+                'placeholder': 'Your Email',
+                }),
+        }

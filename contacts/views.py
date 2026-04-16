@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Contacts
 from .forms import MessageFromCustomerForm
@@ -8,6 +8,15 @@ from .forms import MessageFromCustomerForm
 def index(request):
     #1return HttpResponse("Contacts Index Page")
     #2return render(request, 'contacts.html')
+    
+    if request.method == 'POST':
+        form = MessageFromCustomerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            #можно добавить сообщение об успешной отправке формы, например, через messages framework
+            return redirect('home:index')  # перенаправляем на home страницу после успешной отправки формы
+        
+        
     context = {
         'message_form': MessageFromCustomerForm(),
         'contacts': Contacts.objects.first()
