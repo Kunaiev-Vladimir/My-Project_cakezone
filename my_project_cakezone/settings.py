@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'masters.apps.MastersConfig',
     'services.apps.ServicesConfig',
-    'contacts.apps.ContactsConfig'
+    'contacts.apps.ContactsConfig',
+    'account.apps.AccountConfig'
 ]
 
 MIDDLEWARE = [

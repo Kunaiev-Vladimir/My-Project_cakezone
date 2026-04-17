@@ -17,7 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+
 from my_project_cakezone import settings
+from account.views import RegisterView, MyLoginView, user_logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +29,12 @@ urlpatterns = [
     path('masters/', include('masters.urls')),
     path('services/', include('services.urls')),
     path('contacts/', include('contacts.urls')),
+    
+    path('subscribe/', include('contacts.urls')),
+    
+    path('register/', RegisterView.as_view(), name='register'),
+    path('login/', MyLoginView.as_view(), name='login'),
+    path('logout/', user_logout, name='logout'),
 ]
 
 if settings.DEBUG:

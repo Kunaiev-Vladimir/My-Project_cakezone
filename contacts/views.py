@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Contacts
-from .forms import MessageFromCustomerForm
+from .forms import MessageFromCustomerForm, SubscriberForm
 
 # Create your views here.
 
@@ -22,3 +22,10 @@ def index(request):
         'contacts': Contacts.objects.first()
     }
     return render(request, 'contacts.html', context = context)
+
+def subscribe(request):
+    if request.method == 'POST':
+        form = SubscriberForm(request.POST)
+        if form.is_valid():
+            form.save() 
+    return redirect('/')
