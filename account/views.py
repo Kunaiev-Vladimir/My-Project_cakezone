@@ -7,12 +7,14 @@ from django.contrib.auth import logout
 
 # Create your views here.
 class RegisterView(CreateView):
+    
     template_name = 'register.html'
     form_class = RegisterForm
     success_url = '/'   
 
 
 class MyLoginView(LoginView):
+    
     template_name = 'login.html'
     #form_class = LoginForm
     #success_url = '/'
